@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<style>
+    h1::after {
+        content: '|';
+        margin-left: 5px;
+        opacity: 1;
+        animation: pisca .7s infinite;
+    }
+
+    @keyframes pisca {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+<h1 class="titulo-principal">Sobre mim</h1>
+<!-- <img src="{{ url_for('static', filename='img/gif.gif')}}"> -->
+<hr>
+<p>Atuo há mais de 6 anos como Técnico em Informática, trabalhei em diversas empresas como Técnico de TI e na parte do suporte ao usuário, sou um estudante apaixonado na área de redes e ethical hacking, no meu tempo livre, montei, instalei e configurei um servidor pessoal para gerenciamento de arquivos e dispositivos IOTs na minha casa. Mais a frente adquiri uma paixão pela arte de convencer as pessoas, utilizando assim, da persuasão para vender e fechar contratos, em minha experiência trabalhando em empresas recebi bônus por vendas mesmo sem trabalhar como vendedor.</p>
+<script>
+    function typeWrite(elemento){
+    const textoArray = elemento.innerHTML.split('');
+    elemento.innerHTML = ' ';
+    textoArray.forEach(function(letra, i){   
+      
+    setTimeout(function(){
+        elemento.innerHTML += letra;
+    }, 75 * i)
+
+  });
+}
+    const titulo = document.querySelector('.titulo-principal');
+    typeWrite(titulo); 
+
+    </script>
+
+{% endblock %}
